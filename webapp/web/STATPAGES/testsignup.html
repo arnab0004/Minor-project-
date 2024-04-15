@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Link to your CSS file -->
+</head>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+    }
+
+    /* Header Styles */
+    header {
+        background-color: #00519d;
+        color: #fff;
+        text-decoration: none;
+        padding: 10px 0;
+    }
+
+    nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 20px;
+    }
+
+    .logo {
+        margin-left: 20px;
+        display: flex;
+        align-items: center;
+    }
+
+    .logo img {
+        max-width: 100px;
+        /* Adjust the maximum width for your logo */
+        max-height: auto;
+        /* Retains the aspect ratio */
+        margin-right: 10px;
+        /* Add margin between logo and text */
+        border-radius: 100%;
+    }
+
+    .logo h1 {
+        margin: 0;
+        /* Remove any default margins */
+        color: white;
+        padding: 0;
+    }
+
+    .nav-links {
+        list-style: none;
+        display: flex;
+        /* align-items: center; */
+    }
+
+    .nav-links li {
+        /* display: inline; */
+        margin-right: 20px;
+    }
+
+    .nav-links a {
+        text-decoration: none;
+        color: white;
+        /* Change link color to your preference */
+    }
+
+    .nav-links li:nth-child(1) a,
+    .nav-links li:nth-child(2) a,
+    .nav-links li:nth-child(3) a,
+    .nav-links li:nth-child(4) a,
+    .nav-links li:nth-child(5) a {
+        color: #fff;
+        /* Changing the color to white */
+        text-decoration: none;
+        background: #00519d;
+        /* Adding a background color */
+        padding: 10px 15px;
+        border-radius: 5px;
+    }
+
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-image: url("signup.jpg");
+        background-size: cover;
+    }
+
+    #span {
+        margin-right: 17px;
+    }
+
+    .signup-form {
+        max-width: 400px;
+        margin: 50px auto;
+        padding: 20px;
+        background: #f9f9f9;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    h2 {
+        text-align: center;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    input[type="password"],
+    textarea,
+    button {
+        width: 100%;
+        padding: 10px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+    }
+
+    button {
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+    button:hover {
+        background-color: #45a049;
+    }
+
+
+    .login-link {
+    margin-top: 20px; /* Adjust the value as needed */
+    text-align: center;
+}
+
+.login-link a {
+    color: #333; /* Adjust the color as needed */
+    text-decoration: none;
+}
+
+.login-link a:hover {
+    text-decoration: underline;
+}
+
+
+
+    footer {
+        background-color: #333;
+        color: #fff;
+        padding: 20px 0;
+    }
+
+    .footer-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+
+    .footer-section {
+        margin: 20px 0;
+        padding: 0 20px;
+        max-width: 300px;
+    }
+
+    .footer-section h3 {
+        margin-bottom: 10px;
+    }
+
+    .footer-section ul {
+        list-style: none;
+        padding: 0;
+    }
+
+    .footer-section ul li {
+        margin-bottom: 5px;
+        font-size: 12px;
+    }
+
+    .footer-section ul li a {
+        color: #fff;
+        text-decoration: none;
+    }
+
+    @media (max-width: 768px) {
+        header {
+            padding: 10px;
+            text-decoration: none;
+        }
+
+        .nav-links li {
+            display: block;
+            margin: 10px 0;
+        }
+    }
+</style>
+<header>
+    <nav>
+        <div class="logo">
+            <img src="logo.jpg" alt="Airline Reservation Logo">
+            <h1>Airline Reservation</h1>
+        </div>
+        <ul class="nav-links">
+            <!-- <li><a href="#features">Features</a></li> -->
+            <li><a href="#search">Search Flights</a></li>
+            <!-- <li><a href="#about">About Us</a></li> -->
+            <li><a href="http://localhost:8080/webapp/STATPAGES/test2login.html">Login</a></li>
+            <li><a href="testsignup.html">Sign Up</a></li>
+        </ul>
+    </nav>
+</header>
+<body>
+
+
+    
+    <div class="signup-form">
+        <h2>Sign Up</h2>
+        <form action="http://localhost:8080/webapp/signup">
+            <input name="fname" type="text" placeholder="First Name" required>
+            <input name="lname" type="text" placeholder="Last Name" required>
+            <div>
+                <span  id="span">Gender: </span>
+                <label  for="male">Male</label>
+                <input type="radio" id="male" name="gender1" value
+                       ="m">
+                <label for="female">Female</label>
+                <input type="radio" id="female" name="gender1" value
+                       ="f">
+                <label for="other">Other</label>
+                <input type="radio" id="other" name="gender1" value="o">
+            </div>
+            <input name="email" type="email" placeholder="Email" required>
+            <input name="pfone" type="tel" placeholder="Phone Number" required>
+            <label for="dob">Date of Birth:</label>
+            <input name="date" type="date" required>
+            <textarea placeholder="Address" name="address" required></textarea>
+            <input name="npassword" type="password" placeholder="Password" required>
+            <!--<input name="cpassword" type="password" placeholder="Confirm Password" required>-->
+           <label for="sques">Security Question:</label>
+            <select id="sques" name="sques">
+                <option value="What is your favorite color?">What is your favorite color?</option>
+                <option value="In which city were you born?">In which city were you born?</option>
+                <option value="What is the name of your first pet?">What is the name of your first pet?</option>
+                <option value="What is the name of your first pet?">What is your nick name?</option>
+
+                
+            </select><br>
+
+            <label for="sanswer">Security Answer:</label><br>
+            <input name="sanswer" type="text" placeholder="Answer" required>
+            <button name="submit" type="submit">Submit</button>
+            <p class="login-link">Already have an account? <a href="http://localhost:8080/webapp/STATPAGES/test2login.html">Log in here</a></p>
+            <p><a href="AdminLogin.html" style="text-decoration: none;align-items: center;margin-left: 150px;">Log in as Admin</a></p>
+        </form>
+    </div>
+
+</body>
+<footer>
+    <!-- Footer content -->
+
+    <div class="footer-container">
+        <div class="footer-section">
+            <h3>Company</h3>
+            <ul>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Contact Us</a></li>
+                <li>&copy; 2023 Your Airline Reservation</li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h3>Social Profiles</h3>
+            <ul>
+                <li><a href="#">Facebook</a></li>
+                <li><a href="#">LinkedIn</a></li>
+                <li><a href="#">Instagram</a></li>
+                <li><a href="#">Twitter</a></li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h3>Policies</h3>
+            <ul>
+                <li><a href="#">Cookie Policy</a></li>
+                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="#">Terms and Conditions</a></li>
+                <li><a href="#">Company Details</a></li>
+            </ul>
+        </div>
+    </div>
+</footer>
+</html>

@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Airline Ticket Reservation</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Reset default margin and padding */
+        body,
+        h1,
+        h2,
+        p,
+        ul {
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Global styles */
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: #00519d;
+            color: #fff;
+            text-decoration: none;
+            padding: 20px;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            ;
+            align-items: center;
+            padding: 10px;
+        }
+
+        .logo {
+            margin-left: 20px;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-links li {
+            /* display: inline; */
+            margin-right: 20px;
+        }
+
+        .nav-links li:nth-child(1) a,
+        .nav-links li:nth-child(2) a,
+        .nav-links li:nth-child(3) a,
+        .nav-links li:nth-child(4) a,
+        .nav-links li:nth-child(5) a {
+            color: #fff;
+            /* Changing the color to white */
+            text-decoration: none;
+            background: #00519d;
+            /* Adding a background color */
+            padding: 10px 15px;
+            border-radius: 5px;
+        }
+
+
+
+        .hero {
+            text-align: center;
+            padding: 100px 0;
+            background: #f4f4f4;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            text-decoration: none;
+            background: #00519d;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            margin-bottom: 30px;
+        }
+
+        .responsive-image {
+            max-width: 100%;
+            height: auto;
+            text-align: center;
+        }
+
+        .responsive-image img {
+            width: 100%;
+            height: auto;
+        }
+        /* Your existing CSS */
+
+/* New CSS for the responsive footer */
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+}
+
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.footer-section {
+    margin: 20px 0;
+    padding: 0 20px;
+    max-width: 300px;
+}
+
+.footer-section h3 {
+    margin-bottom: 10px;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 5px;
+}
+
+.footer-section ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+
+        /* Media query for responsiveness */
+        @media (max-width: 768px) {
+            header {
+                padding: 10px;
+                text-decoration: none;
+            }
+
+            .nav-links li {
+                display: block;
+                margin: 10px 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <h1>Airline Reservation</h1>
+            </div>
+            <ul class="nav-links">
+                <!-- <li><a href="#features">Features</a></li> -->
+                <li><a href="http://localhost:8080/webapp/STATPAGES/TESTSEARCHFLIGHT1.html">Search Flights</a></li>
+                <!-- <li><a href="#about">About Us</a></li> -->
+                <li><a href="http://localhost:8080/webapp/STATPAGES/test2login.html">Login</a></li>
+                <li><a href="http://localhost:8080/webapp/STATPAGES/testsignup.html">Sign Up</a></li>
+            </ul>
+        </nav>
+    </header>
+
+
+    <section class="hero">
+        <h1>Find Your Perfect Flight</h1>
+        <p>Book your next adventure with us!</p>
+        <a href="http://localhost:8080/webapp/STATPAGES/TESTSEARCHFLIGHT1.html" class="btn">Search Flights</a>
+        <div class="responsive-image">
+            <img src="landing.jpg" alt="Search Flights Image">
+        </div>
+    </section>
+
+    <section id="features">
+        <!-- Feature section content -->
+    </section>
+
+    <section id="search">
+        <!-- Search form for flights -->
+    </section>
+
+    <section id="about">
+        <!-- About Us section -->
+    </section>
+
+    <footer>
+        <!-- Footer content -->
+
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>Company</h3>
+                <ul>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                    <li>&copy; 2023 Your Airline Reservation</li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Social Profiles</h3>
+                <ul>
+                    <li><a href="#">Facebook</a></li>
+                    <li><a href="#">LinkedIn</a></li>
+                    <li><a href="#">Instagram</a></li>
+                    <li><a href="#">Twitter</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Policies</h3>
+                <ul>
+                    <li><a href="#">Cookie Policy</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms and Conditions</a></li>
+                    <li><a href="#">Company Details</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

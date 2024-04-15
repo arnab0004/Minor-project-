@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        User Data Management
+    </title>
+    <style>
+        body {
+            margin: 4rem;
+            font-family: Arial, sans-serif;
+
+        }
+
+        #formContainer {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-top: 10px;
+        }
+
+        input,
+        textarea {
+            width: 300px;
+            padding: 8px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button {
+            margin: 10px;
+            padding: 8px 16px;
+            background-color: rgb(76, 129, 175);
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #51a045;
+        }
+
+        table {
+            border-collapse: collapse;
+            margin-bottom: 20px;
+            width: 100%;
+        }
+
+        th,
+        td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #0554a4;
+            color: #fff;
+        }
+
+        h1 {
+            font-size: 60px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 style="color: rgb(54, 91, 156)" >
+        Flight page
+    </h1>
+    <h2></h2>
+
+    <div id="formContainer">
+        <form action="http://localhost:8080/webapp/Flightpage">
+        <label for="Flight_no">
+            Flight No.
+        </label>
+        <input type="text" id="Flight_no" name="Flight_no" placeholder="Enter flight no.">
+
+
+
+        <label for=" Flight_name">
+            Flight Name
+        </label>
+        <input type="text" id="Flight_name" name="Flight_name" placeholder="Enter flight name">
+
+
+
+        <label for="from">
+            From
+        </label>
+        <input type="text" id="from" name="from" placeholder="From">
+
+
+
+        <label for="to">
+            To <!--Departure,Cabin, Tickit Price -->
+        </label>
+        <input type="text" id="to" name="to" placeholder="To destination">
+
+
+        <label for="departure">
+            Departure
+        </label>
+        <input type="date" id="departure" name="departure" placeholder="Departure">
+
+
+        <label for="cabin">
+            Cabin
+        </label>
+        <input type="text" id="cabin" name="cabin" placeholder="Cabin type">
+
+
+        <label for="ticket_price">
+            Ticket Fare
+        </label>
+        <input type="number" id="ticket_price" name="ticket_price" placeholder="Ticket fare" value="/-">
+
+
+
+        <button onclick="addData()">
+            Add
+        </button>
+    </form>
+    <!--</div>-->
+<!--    <table id="outputTable">
+        <tr>
+            <th>Serial No.</th>
+            <th>Flight_No.</th>
+            <th> Flight_Name</th>
+            <th>From </th>
+            <th>To </th>
+            <th> Departure</th>
+            <th>Cabin </th>
+            <th>Ticket Fare </th>
+            <th>Action</th>
+        </tr>
+    </table>
+    <button onclick="saveData()">
+        Save
+    </button>-->
+<!--    <script>
+        let serialNumber = 1;
+
+        function addData() {
+            // Get input values
+            let Flight_No = document.getElementById("Flight_no").value;
+            let Flight_Name = document.getElementById("Flight_name").value;
+            let From = document.getElementById("from").value;
+            let To = document.getElementById("to").value;
+            let Departure = document.getElementById("departure").value;
+            let Cabin = document.getElementById("cabin").value;
+            let Ticket_Fare = document.getElementById("ticket_price").value;
+
+
+            // Get the table and insert a new row at the end
+            let table = document.getElementById("outputTable");
+            let newRow = table.insertRow(table.rows.length);
+
+            // Insert data into cells of the new row
+            newRow.insertCell(0).innerHTML = serialNumber++;
+            newRow.insertCell(1).innerHTML = Flight_No;
+            newRow.insertCell(2).innerHTML = Flight_Name;
+            newRow.insertCell(3).innerHTML = From;
+            newRow.insertCell(4).innerHTML = To;
+            newRow.insertCell(5).innerHTML = Departure;
+            newRow.insertCell(6).innerHTML = Cabin;
+            newRow.insertCell(7).innerHTML = Ticket_Fare;
+            newRow.insertCell(8).innerHTML =
+                '<button onclick="editData(this)">Edit</button>' +
+                '<button onclick="deleteData(this)">Delete</button>';
+
+            // Clear input fields
+            clearInputs();
+        }
+
+        function editData(button) {
+            // Get the parent row of the clicked button
+            let row = button.parentNode.parentNode;
+
+            // Get the cells within the row
+            let Flight_NoCell = row.cells[1];
+            let Flight_NameCell = row.cells[2];
+            let FromCell = row.cells[3];
+            let ToCell = row.cells[4];
+            let DepartureCell = row.cells[5];
+            let CabinCell = row.cells[6];
+            let Ticket_FareCell = row.cells[7];
+
+            // Prompt the user to enter updated values
+            let Flight_NoInput =
+                prompt("Enter the updated Flight no.:", Flight_NoCell.innerHTML);
+            let Flight_NameInput =
+                prompt("Enter the updated Flight name:", Flight_NameCell.innerHTML);
+            let FromInput =
+                prompt("Enter the updated From:", FromCell.innerHTML);
+            let ToInput =
+                prompt("Enter the updated To:", ToCell.innerHTML);
+            let DepartureInput =
+                prompt("Enter the updated  Departure:", DepartureCell.innerHTML);
+            let CabinInput =
+                prompt("Enter the updated Cabin:", CabinCell.innerHTML);
+            let Ticket_FareInput =
+                prompt("Enter the updated Ticket fare:", Ticket_FareCell.innerHTML);
+
+
+            // Update the cell contents with the new values
+            Flight_NoCell.innerHTML = Flight_NoInput;
+            Flight_NameCell.innerHTML = Flight_NameInput;
+            FromCell.innerHTML = FromInput;
+            ToCell.innerHTML = ToInput;
+            DepartureCell.innerHTML = DepartureInput;
+            CabinCell.innerHTML = CabinInput;
+            Ticket_FareCell.innerHTML = Ticket_FareInput;
+        }
+
+        function deleteData(button) {
+            // Get the parent row of the clicked button
+            let row = button.parentNode.parentNode;
+
+            // Remove the row from the table
+            row.parentNode.removeChild(row);
+        }
+
+        function clearInputs() {
+            // Clear input fields
+            document.getElementById("Flight_no").value = "";
+            document.getElementById("Flight_name").value = "";
+            document.getElementById("from").value = "";
+            document.getElementById("to").value = "";
+            document.getElementById("departure").value = "";
+            document.getElementById("cabin").value = "";
+            document.getElementById("ticket_price").value = "";
+        }
+
+        function saveData() {
+            // Here you can implement the logic to send data to the database
+            alert("Data saved to the database!");
+        }
+    </script>-->
+</body>
+
+</html>

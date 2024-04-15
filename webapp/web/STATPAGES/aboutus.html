@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="flightaboutus.css">
+  <style>
+    button {
+      background-color: rgb(57, 182, 204);
+      color: white;
+      border: none;
+      border-radius: 20px;
+      text-align: center;
+      height: 50px;
+      width: 150px;
+      font-size: 7px;
+      margin-top: 30px;
+    }
+
+    * {
+      margin: 0;
+    }
+
+    /* header portion ..............................*/
+    header {
+      /* background-color: #00519d71; */
+      height: 100px;
+      text-align: center;
+    }
+
+    .navbar {
+      padding: 20px;
+      /* opacity: 0.3; */
+    }
+
+    a {
+      color: white;
+      text-decoration: none;
+      font-size: 22px;
+    }
+
+    #home {
+      padding-left: 80px;
+    }
+
+    .navbar1 {
+      padding-left: 50px;
+
+    }
+
+    #logo {
+      font-size: 30px;
+      padding-left: 5px;
+    }
+
+    /* the below code shows the footer ...............................*/
+    footer {
+      /* background-image: url("footerimage.jpg"); */
+      opacity: 0.9;
+      background-color: #000000;
+      text-align: center;
+      color: black;
+      height: 200px;
+      padding-top: 25px;
+
+    }
+
+    footer {
+      background-color: #6cbdff;
+      color: #fff;
+      padding: 20px;
+    }
+
+    .footer-columns {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+
+    .footer-column {
+      flex: 1;
+      margin-right: 20px;
+    }
+
+    .footer-column:last-child {
+      margin-right: 0;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    li {
+      margin-bottom: 10px;
+    }
+
+    .list {
+      text-decoration: none;
+      color: #fff;
+      font-size: 15px;
+    }
+
+    #content {
+      height: 1080px;
+      /* background-image: url("finalpic.jpg");
+  background-size: cover; */
+      display: flex;
+      justify-content: space-around;
+      flex-direction: row;
+
+    }
+
+    /* the first image ......................................*/
+    /* #box1{
+    position: relative;
+    top: 100px;
+    left: 5%;
+    height: 400px;
+    width: 600px;
+    background-color: red;
+    background-image: none;
+    display: inline-block;
+    background-image: url("flightimage2.jpg");
+    background-size: cover; 
+} */
+
+    #main {
+      background-image: url("teampic.jpg");
+    }
+
+    /* the below portion shows the about us portion till read more ............................................*/
+    #box2 {
+      position: relative;
+      right: 1%;
+      position: relative;
+      top: 10px;
+      height: 550px;
+      width: 700px;
+      /* background-color: rgb(0, 0, 248); */
+
+    }
+
+    #abt {
+      color: white;
+      font-size: 40px;
+    }
+
+    #about {
+      padding-left: 35px;
+      padding-top: 100px;
+    }
+
+    #about1 {
+      color: white;
+      font-size: 22px;
+    }
+
+    /* below code shows the about us hover ..........................................................................*/
+    .dropdown {
+      position: relative;
+      display: inline-block;
+      font-size: 17px;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #36c6c6;
+      height: 330px;
+      width: 200px;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      z-index: 1;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    #box6 {
+      height: 200px;
+      width: 50%;
+      margin-left: 18px;
+      display: inline-block;
+      display: flex;
+      justify-content: space-around;
+      flex-direction: row;
+    }
+
+    #box7 {
+      /* background-color: magenta; */
+      position: relative;
+      bottom: 440px;
+    }
+
+    #head {
+      font-size: 22px;
+      color: white;
+    }
+
+    /* The below code shows the team member hover portion ...........................................................*/
+
+    #members {
+      position: relative;
+      bottom: 200px;
+    }
+
+    #m1 {
+      font-size: 30px;
+      text-align: center;
+    }
+
+    #memberinfo {
+      margin-top: 50px;
+    }
+
+    .container {
+      position: relative;
+      width: 19%;
+      height: 35%;
+      display: inline-block;
+    }
+
+    .image {
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+
+    .overlay {
+      position: absolute;
+      bottom: 100%;
+      left: 0;
+      right: 0;
+      background-color: #008CBA;
+      overflow: hidden;
+      width: 100%;
+      height: 0;
+      transition: .5s ease;
+    }
+
+    .container:hover .overlay {
+      bottom: 0;
+      height: 100%;
+    }
+
+    .text {
+      white-space: nowrap;
+      color: white;
+      font-size: 20px;
+      position: absolute;
+      overflow: hidden;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+    }
+
+    #hover {
+      margin-left: 18px;
+      display: flex;
+      justify-content: space-around;
+    }
+
+    #arrow {
+      height: 20px;
+      width: 100px;
+      position: relative;
+      left: 1390px;
+      border-radius: 50%;
+      /* background-color: blue; */
+      /* background-image: url("uparrow.jpg");
+  background-size: cover; */
+
+    }
+
+    @media screen and (max-width: 600px) {
+
+       header {
+         background-color: #00519d71; 
+        height: 0px;
+
+      }
+
+      a {
+        color: white;
+        text-decoration: none;
+        font-size: 10px;
+      }
+
+      #logo {
+        font-size: 10px;
+        padding-left: 5px;
+      }
+
+       .navbar {
+        display: flex;
+        justify-content: center;
+
+      } 
+      #abt {
+      color: white;
+      font-size: 20px;
+    }
+
+    #about {
+      padding-left: 35px;
+      padding-top: 100px;
+    }
+
+    #about1 {
+      color: white;
+      font-size: 10px;
+    } 
+      
+    }
+  </style>
+</head>
+<div id="main">
+  <header>
+    <div class="navbar">
+      <a href="airline home page.html" id="logo"><b>Airline Reservation System</b></a>
+      <!-- <a href="airline home page.html" id="home"></a> -->
+      <!-- <a href="flightaboutus.html" class="navbar1" id="About" <big><b>About Us</b></big></a>
+      <a href="#" class="navbar1" id="search flights">Search Flights</a>
+      <a href="#" class="navbar1" id="All Flights">All Flights</a>
+      <a href="flightsignup.html" class="navbar1" id="Register">Register</a>-->
+      <!-- <a href="login.html" class="navbar1" id="Login">Home</a>
+      <a href="contact form.html" class="navbar1" id="Contact Us">Home</a>  -->
+    </div>
+  </header>
+
+  <body id="body">
+    <div id="content">
+      <!-- <div id="box1">
+               
+            </div> -->
+      <div id="box2">
+        <div id="about">
+          <h6 id="abt"><b><u>Who are we?</u></b></h6><br><br>
+          <span id="about1"> Welcome to our world! At Airline reservation,
+            we are more than just a brand; we are a story, a vision, and a community.
+            Allow us to introduce ourselves and share our journey with you<br><br>
+            Airline reservation was born out of a shared passion and a dream.
+            Established in [Year], our founders embarked on a mission to 
+            "revolutionize the tech industry" or "bring art to every home".
+            What started as a small endeavor has grown into something much greater,
+            and it's all thanks to the unwavering dedication and hard work of our team.
+          </span>
+
+          <div>
+            <button id="button1"><a href="#box6">Read more</a></button>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+</div>
+<div id="box7">
+
+  <div id="box6">
+    <div class="dropdown" id="box3">
+      <span>
+        <div id="head">About Airline Reservation</div>
+      </span>
+      <div class="dropdown-content">
+        Welcome to GreenTech Innovations, where passion meets
+        purpose in the pursuit of a greener, more sustainable future.
+        Our story is one of dedication to environmental stewardship and a relentless commitment to innovation.
+      </div>
+    </div>
+
+    <div class="dropdown" id="box4">
+      <span>
+        <div id="head">Our Journey</div>
+      </span>
+      <div class="dropdown-content">
+        Founded in [Year], GreenTech Innovations was born from a
+        shared vision among a group of eco-conscious engineers,
+        scientists, and entrepreneurs.
+        Fueled by our deep concern for the planet's well-being,
+        we set out on a mission to harness the power of technology to drive positive change.
+      </div>
+    </div>
+
+    <div class="dropdown" id="box5">
+      <span>
+        <div id="head">Our Mission</div>
+      </span>
+      <div class="dropdown-content">
+        Our mission is the driving force behind everything we do.
+        At [Your Company/Organization Name], we are committed to [describe your mission, e.g.,
+        "empowering individuals with innovative technology solutions" or "inspiring creativity
+        and fostering a love for learning through art"]. It's not just a statement;
+        it's a commitment that guides us in every decision we make.
+      </div>
+    </div>
+    <div class="dropdown" id="box5">
+      <span>
+        <div id="head">Our Values</div>
+      </span>
+      <div class="dropdown-content">
+        Our values define who we are.
+        They are the principles that guide us in our daily operations and interactions.
+        Integrity, innovation, and [mention other core values] are not just words; they are the foundation of our
+        culture.
+        We believe in [elaborate on each value, explaining how it influences your company's actions and decisions].
+      </div>
+    </div>
+
+
+
+  </div>
+</div>
+<div id="members">
+
+  <hr>
+  <div id="m1">
+    <b>Our Team Members</b>
+  </div>
+  <div id="memberinfo">
+    <div id="hover">
+
+      <div class="container">
+        <img src="image1.jpg" alt="Avatar" class="image">
+        <div class="overlay">
+          <div class="text">
+            <b>Mehul Dutta</b><br>
+
+
+          </div>
+        </div>
+      </div>
+
+      <div class="container">
+        <img src="image2.jpg" alt="Avatar" class="image">
+        <div class="overlay">
+          <div class="text">
+            <b>Priyanka Maity</b><br>
+
+
+          </div>
+        </div>
+      </div>
+
+      <div class="container">
+        <img src="image3.jpg" alt="Avatar" class="image">
+        <div class="overlay">
+          <div class="text">
+            <span>
+              <b>Arnab Mondal</b><br>
+              (frontend-developer)
+            </span>
+
+          </div>
+        </div>
+      </div>
+
+
+      <div class="container">
+        <img src="image4.jpg" alt="Avatar" class="image">
+        <div class="overlay">
+          <div class="text">
+            <b>Poushali Ghosal</b><br>
+            (backend-developer)
+
+          </div>
+        </div>
+      </div>
+
+
+      <div class="container">
+        <img src="image5.jpg" alt="Avatar" class="image">
+        <div class="overlay">
+          <div class="text">
+            <b>Avilash Hait</b><br>
+
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+</div>
+</body>
+<footer id="fo">
+  <div class="footer-columns">
+    <div class="footer-column">
+      <h4>Help</h4>
+      <br>
+      <ul>
+        <li><a href="feedback.html" class="list">Feedback</a></li>
+        <li><a href="#" class="list">About Us</a></li>
+        <li><a href="login.html" class="list">Log In</a></li>
+      </ul>
+    </div>
+    <div class="footer-column">
+      <h4>Privacy Settings</h4>
+      <br>
+      <ul>
+        <li><a href="#" class="list">Cookie Policy</a></li>
+        <li><a href="#" class="list">Privacy Policy</a></li>
+        <li><a href="#" class="list">Terms and Conditions</a></li>
+        <li><a href="#" class="list">Company Details</a></li>
+      </ul>
+    </div>
+    <div class="footer-column">
+      <h4>Follow Us</h4>
+      <br>
+      <ul>
+        <li><a href="#" class="list">Facebook</a></li>
+        <li><a href="#" class="list">LinkedIn</a></li>
+        <li><a href="#" class="list">Instagram</a></li>
+        <li><a href="#" class="list">Twitter</a></li>
+      </ul>
+    </div>
+  </div>
+  <!-- <div id="fo3">
+        made with &hearts;
+        &#169;copy-right protected 
+    </div> -->
+  <div id="arrow"><a href="#logo">
+      <img src="uparrow.jpg" alt="arrow" height="28px" width="30px">
+    </a>
+  </div>
+</footer>
+
+</html>

@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            font-size: 100%;
+            background: url("bookflightimg.jpg")no-repeat center top;
+            background-size: cover;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            /* background-attachment: fixed; */
+        }
+
+        main {
+            flex: 1;
+        }
+
+
+        header {
+            background-color: #00519d00;
+            color: #fff;
+            text-decoration: none;
+            padding: 0px;
+            margin-bottom: 100px;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            ;
+            align-items: center;
+            padding: 10px;
+        }
+
+        .logo {
+            margin-left: 20px;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-links li {
+            /* display: inline; */
+            margin-right: 20px;
+        }
+
+        .nav-links li:nth-child(1) a,
+        .nav-links li:nth-child(2) a,
+        .nav-links li:nth-child(3) a,
+        .nav-links li:nth-child(4) a,
+        .nav-links li:nth-child(5) a {
+            color: #fff;
+            /* Changing the color to white */
+            text-decoration: none;
+            background: 00519d00;
+            /* Adding a background color */
+            padding: 10px 15px;
+            border-radius: 5px;
+        }
+
+
+
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 20px 0;
+            margin-top: 100px ;
+
+        }
+
+        .footer-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+
+        .footer-section {
+            margin: 20px 0;
+            padding: 0 20px;
+            max-width: 300px;
+        }
+
+        .footer-section h3 {
+            margin-bottom: 10px;
+        }
+
+        .footer-section ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 5px;
+        }
+
+        .footer-section ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .footer-section li a {
+            font-size: 12px;
+        }
+
+        .submit-button {
+            background-color: rgb(9, 128, 0);
+            /* Changing the background color to green */
+            color: white;
+            /* Text color */
+            padding: 10px 20px;
+            /* Padding for the button */
+            border: none;
+            /* Remove the default button border */
+            border-radius: 5px;
+            /* Add a bit of border radius */
+            cursor: pointer;
+            /* Show a pointer cursor on hover */
+        }
+
+        .reset-button {
+            background-color: rgb(9, 128, 0);
+            /* Changing the background color to green */
+            color: white;
+            /* Text color */
+            padding: 10px 20px;
+            /* Padding for the button */
+            border: none;
+            /* Remove the default button border */
+            border-radius: 5px;
+            /* Add a bit of border radius */
+            cursor: pointer;
+        }
+
+
+        div,
+        h2,
+        h3,
+        h6,
+        form,
+        label {
+            margin: 0;
+            padding: 0;
+            border: 0;
+            font-size: 100%;
+            font: inherit;
+            vertical-align: baseline;
+        }
+
+        ul {
+            list-style: none;
+            margin: 0px;
+            padding: 0px;
+        }
+
+        .clear {
+            clear: both;
+        }
+
+        .booking-form-w3layouts {
+            box-sizing: border-box;
+            padding: 3em 3em;
+            background: rgba(0, 0, 0, 0.78);
+            width: 65%;
+            margin: 0 auto;
+        }
+
+        h2.sub-heading-agileits,
+        h3.sub-heading-agileits {
+            display: inline-block;
+            text-align: left;
+            font-size: 24px;
+            color: #fff;
+            text-transform: capitalize;
+            margin-bottom: .4em;
+            padding: 0px 25px 10px 0px;
+            font-weight: 400;
+            letter-spacing: 2px;
+            border-bottom: 2px solid #0091cd;
+            font-family: 'Raleway', sans-serif;
+        }
+
+        .radio-section {
+            text-align: left;
+            margin: 0.7em 0;
+        }
+
+        .radio-section h6 {
+            display: inline;
+            margin-top: 10px;
+            color: #0091cd;
+            font-size: 19px;
+            text-transform: capitalize;
+            margin-bottom: .7em;
+            font-weight: 400;
+            letter-spacing: 2px;
+            font-family: 'Raleway', sans-serif;
+        }
+
+        .radio-section ul {
+            display: inline;
+        }
+
+        .radio-buttons-w3-agileits li input[type="radio"] {
+            cursor: pointer;
+        }
+
+        .radio-buttons-w3-agileits li label {
+            color: #fff;
+            font-size: 13.5px;
+            font-weight: 400;
+            letter-spacing: 1px;
+            font-family: 'Raleway', sans-serif;
+        }
+
+        .booking-form-w3layouts input[type="text"],
+        .booking-form-w3layouts input[type="email"],
+        .booking-form-w3layouts textarea,
+        select.form-control,
+        input#datepicker {
+            width: 100%;
+            font-weight: 300;
+            color: #fff;
+            font-size: 14px;
+            letter-spacing: 1.2px;
+            padding: 10px 10px;
+            outline: none;
+            background: rgba(255, 255, 255, 0);
+            border: none;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.27);
+            box-sizing: border-box;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        .booking-form-w3layouts textarea {
+            resize: none;
+            height: 80px;
+        }
+
+        .field-agileinfo-spc {
+            margin-bottom: 1em;
+        }
+
+        .form-w3-agile-text {
+            width: 100%;
+        }
+
+        select.form-control option {
+            background: #000;
+        }
+
+        .booking-form-w3layouts input[type="submit"],
+        .booking-form-w3layouts input[type="reset"] {
+            text-transform: capitalize;
+            background: #0091cd;
+            color: #fff;
+            padding: 0.5em 4em;
+            border: none;
+            font-weight: 500;
+            font-size: 1.2em;
+            margin-top: 1em;
+            float: left;
+            outline: none;
+            letter-spacing: 1px;
+            -webkit-transition: .5s all;
+            -moz-transition: .5s all;
+            transition: .5s all;
+            cursor: pointer;
+            font-family: 'Raleway', sans-serif;
+        }
+
+        .booking-form-w3layouts input[type="submit"] {
+            margin-right: 1.5em;
+            background: #d2741c;
+        }
+
+        .booking-form-w3layouts input[type="submit"]:hover {
+            background: #0091cd;
+            color: #fff;
+        }
+
+        .booking-form-w3layouts input[type="reset"]:hover {
+            background: #d2741c;
+            color: #fff;
+        }
+
+        .booking-form-w3layouts ::-webkit-input-placeholder {
+            color: #fff;
+        }
+
+        .booking-form-w3layouts :-moz-placeholder {
+            color: #fff;
+        }
+
+        .booking-form-w3layouts ::-moz-placeholder {
+            color: #fff;
+        }
+
+        .booking-form-w3layouts :-ms-input-placeholder {
+            color: #fff;
+        }
+
+        .booking-form-w3layouts label {
+            font-size: 13.5px;
+            color: rgba(255, 255, 255, 0.83);
+            letter-spacing: 2px;
+            font-weight: 400;
+            position: relative;
+            margin-bottom: 5px;
+            display: inline-block;
+            text-transform: capitalize;
+        }
+
+        ul.radio-buttons-w3-agileits li {
+            display: inline-block;
+            margin: 0em 2em;
+        }
+
+        @media (max-width:1440px) {
+            .booking-form-w3layouts {
+                width: 73%;
+            }
+        }
+
+        @media (max-width:1366px) {
+            .booking-form-w3layouts {
+                width: 75%;
+            }
+        }
+
+        @media (max-width:1280px) {
+            .booking-form-w3layouts {
+                width: 80%;
+            }
+        }
+
+        @media (max-width:1080px) {
+            .booking-form-w3layouts {
+                width: 83%;
+                padding: 2em 2.2em;
+            }
+        }
+
+        @media (max-width:1024px) {
+
+            h2.sub-heading-agileits,
+            h3.sub-heading-agileits {
+                font-size: 22px;
+                padding: 0px 20px 7px 0px;
+            }
+
+            .field-agileinfo-spc {
+                margin-bottom: 0.8em;
+            }
+
+            .booking-form-w3layouts input[type="submit"],
+            .booking-form-w3layouts input[type="reset"] {
+                padding: 0.5em 3em;
+                font-size: 1.1em;
+            }
+        }
+
+        @media (max-width:768px) {
+
+            h2.sub-heading-agileits,
+            h3.sub-heading-agileits {
+                font-size: 21px;
+                padding: 0px 15px 7px 0px;
+            }
+
+            .radio-section h6 {
+                font-size: 17px;
+                letter-spacing: 1.5px;
+            }
+
+            ul.radio-buttons-w3-agileits li {
+                margin: 0em 1em;
+            }
+        }
+
+        @media (max-width:667px) {
+
+            h2.sub-heading-agileits,
+            h3.sub-heading-agileits {
+                font-size: 19px;
+                letter-spacing: 1.5px;
+            }
+
+            .booking-form-w3layouts {
+                width: 86%;
+                padding: 2em 2em;
+            }
+
+            .booking-form-w3layouts input[type="text"],
+            .booking-form-w3layouts input[type="email"],
+            .booking-form-w3layouts textarea,
+            select.form-control,
+            input#datepicker {
+                padding: 8px 10px;
+            }
+
+            .field-agileinfo-spc {
+                margin-bottom: 0.9em;
+            }
+
+            h2.sub-heading-agileits,
+            h3.sub-heading-agileits {
+                margin-bottom: .6em;
+            }
+        }
+
+        @media (max-width:640px) {
+            .booking-form-w3layouts input[type="submit"] {
+                margin-right: 0.7em;
+            }
+        }
+
+        @media (max-width:600px) {
+            .booking-form-w3layouts {
+                width: 90%;
+            }
+
+            .booking-form-w3layouts input[type="submit"],
+            .booking-form-w3layouts input[type="reset"] {
+                padding: 0.5em 2em;
+            }
+        }
+
+        @media (min-width:481px) {
+            .main-flex-w3ls-sectns {
+                display: -webkit-flex;
+                display: flex;
+                -webkit-justify-content: space-between;
+                justify-content: space-between;
+            }
+
+            .form-w3-agile-text1,
+            .form-w3-agile-text2 {
+                flex-basis: 48.5%;
+                -webkit-flex-basis: 48.5%;
+            }
+        }
+
+        @media (min-width:737px) {
+            .triple-wthree {
+                display: -webkit-flex;
+                display: flex;
+                -webkit-justify-content: space-between;
+                justify-content: space-between;
+            }
+
+            .form-w3-agile-text11,
+            .form-w3-agile-text22,
+            .form-w3-agile-text33 {
+                flex-basis: 32%;
+                -webkit-flex-basis: 32%;
+            }
+        }
+
+        @media (max-width:480px) {
+            ul.radio-buttons-w3-agileits li {
+                margin: 0em 0.5em;
+            }
+
+            .radio-section {
+                margin: 1.3em 0 .7em;
+            }
+
+            .booking-form-w3layouts {
+                width: 85%;
+            }
+
+            ul.radio-buttons-w3-agileits li {
+                margin: 1em 0em 0em 0.2em;
+                display: block;
+            }
+
+            .booking-form-w3layouts input[type="submit"],
+            .booking-form-w3layouts input[type="reset"] {
+                font-size: 1em;
+            }
+
+            .booking-form-w3layouts textarea {
+                height: 60px;
+            }
+
+            .radio-section {
+                margin: 1em 0 .7em;
+            }
+        }
+
+        @media (max-width:414px) {
+            .booking-form-w3layouts {
+                width: 90%;
+            }
+
+            .booking-form-w3layouts {
+                width: 90%;
+                padding: 1.5em 1.7em;
+            }
+        }
+
+        @media (max-width:384px) {
+
+            .booking-form-w3layouts input[type="submit"],
+            .booking-form-w3layouts input[type="reset"] {
+                float: none;
+            }
+
+            .booking-form-w3layouts input[type="submit"] {
+                margin-right: 0em;
+            }
+        }
+
+        @media (max-width:320px) {
+            .booking-form-w3layouts {
+                width: 93%;
+                padding: 1.3em 1.5em;
+            }
+
+            h2.sub-heading-agileits,
+            h3.sub-heading-agileits {
+                font-size: 18px;
+                letter-spacing: 1.4px;
+                padding: 0px 12px 5px 0px;
+            }
+        }
+
+
+    </style>
+
+
+
+    <header>
+        <nav>
+            <div class="logo">
+                <h1>Airline Reservation</h1>
+            </div>
+            <ul class="nav-links">
+                <!-- <li><a href="#features">Features</a></li> -->
+                <li><a href="#search">Home</a></li>
+                <!-- <li><a href="#about">About Us</a></li> -->
+                <li><a href="#login">Search Flights</a></li>
+                <li><a href="#signup" class="logout-btn">Log Out<i class="fas fa-sign-out-alt"></i> </a></li>
+            </ul>
+        </nav>
+    </header>
+
+
+
+    <body>
+        <form action="http://localhost:8080/webapp/bookflight">
+            <div class="booking-form-w3layouts">
+            <!-- Form starts here -->
+
+            <h2 class="sub-heading-agileits">Booking Details</h2>
+            <div class="main-flex-w3ls-sectns">
+                <div class="field-agileinfo-spc form-w3-agile-text1">
+                    <label for="from" class="form-control" style="margin-top: 20px;font-size: 16px;color:white;" >Flight No:</label>
+                    <input type="text" class="form-control" id="from" name="flno" required>
+
+                    <label for="from" class="form-control" style="margin-top: 20px;font-size: 16px;color:white;" >To:</label>
+                    <input type="text" class="form-control" id="from" name="from" required>
+                </div>
+                <div class="field-agileinfo-spc form-w3-agile-text2">
+                    <label for="from" class="form-control" style="margin-top: 20px;font-size: 16px;color:white;" >From:</label>
+                    <input type="text" class="form-control" id="from" name="to" required>
+                </div>
+            </div>
+            <div class="main-flex-w3ls-sectns">
+                <div class="field-agileinfo-spc form-w3-agile-text1">
+                    <select class="form-control" name="pair">
+                        <option>Preferred Airline</option>
+                        <option value="American Airline">American Airline</option>
+                        <option value="Delta Airlines">Delta Airlines</option>
+                        <option value="Frontier Airline">Frontier Airline</option>
+                        <option value="Jet Blue">Jet Blue</option>
+                        <option value="Southwest Airlines">Southwest Airlines</option>
+                    </select>
+                </div>
+                <div class="field-agileinfo-spc form-w3-agile-text2">
+                    <select class="form-control" name="pseat">
+                        <option>Preferred Seating</option>
+                        <option value="Window">Window</option>
+                        <option value="Aisle">Aisle</option>
+                        <option value="Special">Special (Request note below)</option>
+                    </select>
+                </div>
+            </div>
+            <div class="main-flex-w3ls-sectns">
+                <div class="field-agileinfo-spc form-w3-agile-text1">
+                    <input id="datepicker" name="Text" type="date" placeholder="Departure Date" value=""
+                           onfocus="this.value = '';" onblur="if (this.value == '') {
+                                       this.value = 'mm/dd/yyyy';
+                                   }"
+                           required="" class="hasDatepicker">
+                </div>
+                <!-- <div class="field-agileinfo-spc form-w3-agile-text2">
+                    <input type="text" id="timepicker" name="Time" class="timepicker form-control hasWickedpicker"
+                        placeholder="Departure Time" value="" onkeypress="return false;">
+                </div> -->
+            </div>
+
+            <div class="triple-wthree">
+                <div class="field-agileinfo-spc form-w3-agile-text11">
+                    <select class="form-control" name="adult">
+                        <option value="">Adult(12+ Yrs)</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5+</option>
+                    </select>
+                </div>
+                <div class="field-agileinfo-spc form-w3-agile-text22">
+                    <select class="form-control" name="child">
+                        <option value="">Children(2-11 Yrs)</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5+</option>
+                    </select>
+                </div>
+                <div class="field-agileinfo-spc form-w3-agile-text33">
+                    <select class="form-control" name="inf">
+                        <option value="">Infant(under 2Yrs)</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5+</option>
+                    </select>
+                </div>
+            </div>
+            <div class="radio-section">
+                <h6>Select your Fare</h6>
+                <ul class="radio-buttons-w3-agileits">
+                    <li>
+                        <input type="radio" id="a-option" name="selector1">
+                        <label for="a-option">One Way</label>
+                        <div class="check"></div>
+                    </li>
+                    <li>
+                        <input type="radio" id="b-option" name="selector1">
+                        <label for="b-option">Round-Trip</label>
+                        <div class="check">
+                            <div class="inside"></div>
+                        </div>
+                    </li>
+                </ul>
+                <div class="clear"></div>
+            </div>
+
+            <div class="field-agileinfo-spc form-w3-agile-text1">
+                <input id="datepicker1" name="Text" type="date" placeholder="Return Date" value=""
+                       onfocus="this.value = '';" onblur="if (this.value == '') {
+                                   this.value = 'mm/dd/yyyy';}"
+                       required="" class="hasDatepicker">
+            </div>
+
+
+<!--            <div class="field-agileinfo-spc form-w3-agile-text">
+                <textarea name="Message" placeholder="Any Message..."></textarea>
+            </div>-->
+            <h3 class="sub-heading-agileits">Personal Details</h3>
+            <div class="main-flex-w3ls-sectns">
+                <div class="field-agileinfo-spc form-w3-agile-text1">
+                    <input type="text" name="Name" placeholder="Full Name" required="">
+                </div>
+                <div class="field-agileinfo-spc form-w3-agile-text2">
+                    <input type="text" name="Phoneno" placeholder="Phone Number" required="">
+                </div>
+            </div>
+            <div class="field-agileinfo-spc form-w3-agile-text">
+                <input type="email" name="Email" placeholder="Email" required="">
+            </div>
+            <div class="clear"></div>
+            <input type="submit" class="submit-button" value="Submit">
+            <input type="reset" class="reset-button" value="Clear Form">
+            <div class="clear"></div>
+
+            <!--// Form starts here -->
+        </div>
+        </form>
+        
+    </body>
+    <footer>
+        <!-- Footer content -->
+
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>Company</h3>
+                <ul>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                    <li>&copy; 2023 Your Airline Reservation</li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Social Profiles</h3>
+                <ul>
+                    <li><a href="#">Facebook</a></li>
+                    <li><a href="#">LinkedIn</a></li>
+                    <li><a href="#">Instagram</a></li>
+                    <li><a href="#">Twitter</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Policies</h3>
+                <ul>
+                    <li><a href="#">Cookie Policy</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms and Conditions</a></li>
+                    <li><a href="#">Company Details</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+</html>
